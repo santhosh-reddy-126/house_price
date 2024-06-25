@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regression Model Prediction</title>
+    <style>
+        body{
+            background-color: aqua;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        form{
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    
+    <form action="/predict" method="post">
+        <h1>Regression Model Prediction</h1>
+        <label for="bedr">No of Bed Rooms:</label>
+        <input type="number" id="bedr" name="bedr"><br><br>
+        <label for="bathr">No of Bathrooms:</label>
+        <input type="number" id="bathr" name="bathr"><br><br>
+        <label for="sqftlv">Squarefoot of Living:</label>
+        <input type="number"id="sqftlv" name="sqftlv"><br><br>
+        <label for="sqftlo">Squarefoot of Lot:</label>
+        <input type="number"id="sqftlo" name="sqftlo"><br><br>
+        <label for="flrs">No of floors:</label>
+        <input type="number" id="flrs" name="flrs"><br><br>
+        <label for="wf">Do you want house near a river/lake:</label>
+        <label for="wf">No</label>
+        <input type="radio" id="wf" name="wf" value="0">
+        <label for="wf">Yes</label>
+        <input type="radio" id="wf" name="wf" value="1"><br><br>
+        <label for="vw">Do you want pleasant view near your house:</label>
+        <label for="vw">No</label>
+        <input type="radio" id="vw" name="vw" value="0">
+        <label for="vw">Yes</label>
+        <input type="radio" id="vw" name="vw" value="1"><br><br>
+        <label for="cd">Condition of your House:</label>
+        <label for="cd">1</label>
+        <input type="radio" id="cd" name="cd" value="1">
+        <label for="cd">2</label>
+        <input type="radio" id="cd" name="cd" value="2">
+        <label for="cd">3</label>
+        <input type="radio" id="cd" name="cd" value="3">
+        <label for="cd">4</label>
+        <input type="radio" id="cd" name="cd" value="4">
+        <label for="cd">5</label>
+        <input type="radio" id="cd" name="cd" value="5"><br><br>
+        <label for="gd">Grade(1-13):</label>
+        <input type="number" id="gd" name="gd"><br><br>
+        <label for="sfwb">Squarefoot of house apart from basement:</label>
+        <input type="number" id="sfwb" name="sfwb"><br><br>
+        <label for="sfb">Squarefoot of basement:</label>
+        <input type="number" id="sfb" name="sfb"><br><br>
+        <label for="yb">Year Built(1934-2014):</label>
+        <input type="number" id="yb" name="yb"><br><br>
+        <label for="lat">Latitude(47 to 48):</label>
+        <input type="number" step=0.0001 id="lat" name="lat"><br><br>
+        <label for="lng">Longitude(-122 to -121):</label>
+        <input type="number" step=0.0001 id="lng" name="lng"><br><br>
+        <label for="sfl15">Squarefoot of living (if renovated after renovation):</label>
+        <input type="number" id="sfl15" name="sfl15"><br><br>
+        <label for="sflo15">Squarefoot of lot (if renovated after renovation):</label>
+        <input type="number" id="sflo15" name="sflo15"><br><br>
+        <input type="submit" value="Predict">
+        {% if prediction_text %}
+            <h2>{{ prediction_text }}</h2>
+        {% endif %}
+    </form>
+    
+    
+</body>
+</html>
